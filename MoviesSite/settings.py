@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "django.contrib.admin",
-    'GTMovies.apps.GtmoviesConfig',
+    'home',
+    'movies',
+    'accounts',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -49,7 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-#test
+#test 2
 ROOT_URLCONF = 'MoviesSite.urls'
 
 TEMPLATES = [
