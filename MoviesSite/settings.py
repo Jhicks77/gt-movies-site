@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+#test
 ROOT_URLCONF = 'MoviesSite.urls'
 
 TEMPLATES = [
