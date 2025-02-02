@@ -5,20 +5,20 @@ from django.utils import timezone
 from django.contrib import admin
 
 # Create your models here.
-class User(models.Model):
-    username = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+class Movie(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    price = models.IntegerField()
+    description = models.TextField()
+    image = models.ImageField(upload_to='movie_images/')
     def __str__(self):
-        return self.username
-    @admin.display(boolean=True, ordering="pub_date", description="Published recently?",)
-    def was_published_recently(self):
-        now = timezone.now()
-        return now - datetime.timedelta(days=1) <= self.pub_date <= now
+        return str(self.id) + ' - ' + self.name
 """
 class AccountData(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
     password = models.CharField(max_length=200)
     #other account stuff
     def __str__(self):
         return self.password
 """
+
