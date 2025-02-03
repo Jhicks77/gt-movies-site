@@ -1,9 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
 # Create your views here.
-
 def index(request):
-    return HttpResponse('placeholder home index view')
-
+    template_data = {}
+    template_data['title'] = 'Movies Site'
+    return render(request, 'home/index.html', {
+        'template_data': template_data})
 def about(request):
-    return HttpResponse('placeholder home about view')
+    template_data = {}
+    template_data['title'] = 'About'
+    return render(request, 'home/about.html',
+                  {'template_data': template_data})
