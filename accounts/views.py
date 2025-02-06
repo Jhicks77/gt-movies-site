@@ -1,9 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 def signup(request):
-    return HttpResponse('placeholder account signup view')
+    template_data = {}
+    template_data['title'] = 'Sign Up'
+
+    if request.method == 'GET':
+        template_data['form'] = UserCreationForm()
+        return render(request, 'accounts/signup.html',
+                      {'template_data': template_data})
 
 
 def login(request):
