@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -9,6 +10,6 @@ def add(request, id):
 def clear(request):
     return HttpResponse('placeholder view for clearing cart')
 
-#login required
+@login_required
 def purchase(request):
     return HttpResponse('placeholder view for making a purchase')
