@@ -55,6 +55,6 @@ def logout(request):
     auth_logout(request)
     return redirect('home.index')
 
-#login required
+@login_required
 def orders(request):
     return HttpResponse('placeholder view for viewing the orders of an account')
