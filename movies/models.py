@@ -11,14 +11,8 @@ class Movie(models.Model):
     price = models.IntegerField()
     description = models.TextField()
     image = models.ImageField(upload_to='movie_images/')
+    x = 21
     def __str__(self):
         return str(self.id) + ' - ' + self.name
-"""
-class AccountData(models.Model):
-    user = models.ForeignKey(Account, on_delete=models.CASCADE)
-    password = models.CharField(max_length=200)
-    #other account stuff
-    def __str__(self):
-        return self.password
-"""
+
 
