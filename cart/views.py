@@ -24,8 +24,8 @@ def add(request, id):
     get_object_or_404(Movie, id=id)
     cart = request.session.get('cart', {})
 
-    id = str(id)
-    if id not in cart:
+    id = str(id) # allows for users to add the same movie to their cart multiple times
+    if id not in cart: # otherwise this action would override their previous add-to-cart
         cart[id] = 0
 
     cart[id] += int(request.POST['quantity'])
