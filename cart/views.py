@@ -28,7 +28,8 @@ def add(request, id):
     if id not in cart: # otherwise this action would override their previous add-to-cart
         cart[id] = 0
 
-    cart[id] += int(request.POST['quantity'])
+
+    cart[id] = int(cart[id]) + int(request.POST['quantity']) # to handle any key type
     request.session['cart'] = cart
     return redirect('cart.index')
 
