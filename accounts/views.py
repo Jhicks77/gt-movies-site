@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-# Create your views here.
+
 def signup(request):
     template_data = {}
     template_data['title'] = 'Sign Up'
@@ -43,6 +43,7 @@ def login(request):
             username=request.POST['username'],
             password=request.POST['password']
         )
+
         if user is None:
             template_data['error'] = 'The username or password is incorrect.'
             return render(request, 'accounts/login.html',
@@ -51,10 +52,12 @@ def login(request):
             auth_login(request, user)
             return redirect('home.index')
 
+
 @login_required
 def logout(request):
     auth_logout(request)
     return redirect('home.index')
+
 
 @login_required
 def orders(request):
