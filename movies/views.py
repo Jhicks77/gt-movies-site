@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Movie, Review
 
+# Create your views here.
 
 def index(request):
     search_term = request.GET.get('search')

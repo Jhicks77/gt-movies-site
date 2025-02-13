@@ -1,8 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from movies.models import Movie
-
-
+# Create your models here.
 class Order(models.Model):
     id = models.AutoField(primary_key=True)
     total = models.IntegerField()
@@ -10,8 +9,7 @@ class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{str(self.id)} - {self.user.username}'
-
+        return str(self.id) + ' - ' + self.user.username
 
 class Item(models.Model):
     id = models.AutoField(primary_key=True)
@@ -21,4 +19,4 @@ class Item(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{str(self.id)} - {self.movie.name}'
+        return str(self.id) + ' - ' + self.movie.name
