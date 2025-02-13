@@ -59,8 +59,7 @@ ROOT_URLCONF = 'MoviesSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'moviessite/templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'accounts/templates'), os.path.join(BASE_DIR, 'moviessite/templates'),], # Ensure this includes your custom templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,9 +134,38 @@ STATICFILES_DIRS = [
 
 # Email Configuration for Password Reset
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'parthivfarazi@gmail.com'
-EMAIL_HOST_PASSWORD = 'pleaseForgiveMe'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST_USER = 'postmaster@sandboxf14f56c3e5a9442db4ea2ff07ddbea4a.mailgun.org'
+EMAIL_HOST_PASSWORD = 'fc5214c7cc1023e3471389e34d915d5a-667818f5-335eb843'
+DEFAULT_FROM_EMAIL = 'postmaster@sandboxf14f56c3e5a9442db4ea2ff07ddbea4a.mailgun.org'
+
+import logging
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.security': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
