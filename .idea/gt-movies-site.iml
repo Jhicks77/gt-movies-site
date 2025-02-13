@@ -1,34 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="PYTHON_MODULE" version="4">
-  <component name="FacetManager">
-    <facet type="django" name="Django">
-      <configuration>
-        <option name="rootFolder" value="$MODULE_DIR$/gt-movies-site-main" />
-        <option name="settingsModule" value="MoviesSite/settings.py" />
-        <option name="manageScript" value="$MODULE_DIR$/gt-movies-site-main/manage.py" />
-        <option name="environment" value="&lt;map/&gt;" />
-        <option name="doNotUseTestRunner" value="false" />
-        <option name="trackFilePattern" value="migrations" />
-      </configuration>
-    </facet>
-  </component>
-  <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/gt-movies-site-main" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/.venv" />
-    </content>
-    <orderEntry type="jdk" jdkName="Python 3.13 virtualenv at C:\Users\cypre\PycharmProjects\gt-movies-site\.venv" jdkType="Python SDK" />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
+<module version="4">
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
     <option name="myDocStringFormat" value="Plain" />
   </component>
   <component name="TemplatesService">
-    <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
+    <option name="TEMPLATE_CONFIGURATION" value="Django" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/gt-movies-site-main/accounts/templates" />
+        <option value="$MODULE_DIR$/home/templates" />
       </list>
     </option>
   </component>
