@@ -9,7 +9,8 @@ def get_movie_image(movie, image_path):
     if image_response.status_code != 200:
         return False
 
-    movie.image.save(f"{movie.name}.jpg", ContentFile(image_response.content), save=True)
+    movie.image.save(f"{movie.name.replace("/", "")}.jpg", ContentFile(image_response.content), save=True)
+
     return True
 
 
