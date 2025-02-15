@@ -39,10 +39,14 @@ def add_movies_to_database(search_term):
 
     movie_list = response.json()['results']
 
-
     movie_list.sort(key=lambda movie: -float(movie.get('popularity', 0)))
-    movie_list = movie_list[:3]
+    movie_list = movie_list[:4]
     for movie in movie_list:
-        if movie['title'] not in Movie.objects.values_list("name", flat=True):
+        needed_keys = ['title', 'overview', 'poster_path']
+
+        # if the dictionary isn't missing info about the movie, and we don't already have it in the db
+        if all(key in movie.keys() for key in needed_keys) and\
+                movie['title'] not in Movie.objects.values_list("name", flat=True):
             create_new_movie(movie)
+            # then add it to the db
 
