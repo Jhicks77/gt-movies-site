@@ -1,1 +1,1 @@
-This is code for the clas CS 2340 at Georgia Tech.
+This is code for the class CS 2340 at Georgia Tech.
