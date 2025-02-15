@@ -2,12 +2,16 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Movie, Review
+from .utils import add_movies_to_database
 
 # Create your views here.
 
 def index(request):
     search_term = request.GET.get('search')
     if search_term:
+
+        add_movies_to_database(search_term)
+
         movies=Movie.objects.filter(name__icontains=search_term)
     else:
         movies = Movie.objects.all()
