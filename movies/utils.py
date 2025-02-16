@@ -24,6 +24,10 @@ def create_new_movie(movie_info):
 
 
 def add_movies_to_database(search_term):
+    """
+    calculate_cart_total() correctly calculates the total value
+    of the items contained in the cart dictionary
+    """
     API_KEY = "8fbc775c17dfdc7c290908ec1ecbeaec"
     BASE_URL = "https://api.themoviedb.org/3/search/movie"
     params = {
