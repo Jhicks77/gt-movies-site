@@ -1,20 +1,20 @@
 .bg-index{
-  background: url("/static/img/background.jpg") no-repeat
+  background: url("/static/img/rain.jpg") no-repeat
     fixed;
   background-size: 100% auto;
 }
 
 .card.bg-primary {
-  background-color: #254778 !important;
+  background-color: #0d5464 !important;
 }
 .navbar a.nav-link {
   color: #FFFEF6;
 }
 .bg-dark {
-  background-color: #004040 !important;
+  background-color: #0d5464 !important;
 }
 .ms-footer {
-  background-color: #004040;
+  background-color: #0d5464;
 }
 .ms-footer p {
   color: #7F7F7F;
