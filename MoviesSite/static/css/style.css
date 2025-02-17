@@ -8,20 +8,20 @@
   background-color: #254778 !important;
 }
 .navbar a.nav-link {
-  color: #FFFEF6 !important;
+  color: #FFFEF6;
 }
 .bg-dark {
-  background-color: #2E2E2E !important;
+  background-color: #004040 !important;
 }
 .ms-footer {
-  background-color: #202020;
+  background-color: #004040;
 }
 .ms-footer p {
-    color: #7F7F7F;
+  color: #7F7F7F;
   font-size: 13px;
 }
 .ms-footer a:hover {
-  color: #6ab43e;
+  color: #B0B0FF;
   text-decoration: none;
 }
 .ms-footer-bottom span{
