@@ -4,6 +4,9 @@
   background-size: 100% auto;
 }
 
+.card.bg-primary {
+  background-color: #254778 !important;
+}
 .navbar a.nav-link {
   color: #FFFEF6;
 }
