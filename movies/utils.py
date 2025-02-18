@@ -2,6 +2,7 @@ import requests
 from django.core.files.base import ContentFile
 from .models import Movie
 
+
 def get_movie_image(movie, image_path):
     image_url = f"https://image.tmdb.org/t/p/w500{image_path}"
     image_response = requests.get(image_url)
@@ -10,7 +11,6 @@ def get_movie_image(movie, image_path):
         return False
 
     movie.image.save(f"{movie.name.replace("/", "")}.jpg", ContentFile(image_response.content), save=True)
-
     return True
 
 
@@ -24,10 +24,6 @@ def create_new_movie(movie_info):
 
 
 def add_movies_to_database(search_term):
-    """
-    calculate_cart_total() correctly calculates the total value
-    of the items contained in the cart dictionary
-    """
     API_KEY = "8fbc775c17dfdc7c290908ec1ecbeaec"
     BASE_URL = "https://api.themoviedb.org/3/search/movie"
     params = {
@@ -43,9 +39,9 @@ def add_movies_to_database(search_term):
         return
 
     movie_list = response.json()['results']
-
     movie_list.sort(key=lambda movie: -float(movie.get('popularity', 0)))
     movie_list = movie_list[:4]
+
     for movie in movie_list:
         needed_keys = ['title', 'overview', 'poster_path']
 
