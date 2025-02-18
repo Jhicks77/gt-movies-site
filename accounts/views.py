@@ -11,8 +11,6 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 
 
-
-# Create your views here.
 def signup(request):
     template_data = {}
     template_data['title'] = 'Sign Up'
